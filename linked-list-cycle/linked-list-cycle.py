@@ -14,8 +14,8 @@ class Solution:
             return False
         slowP = head
         fastP = head.next
-        while slowP is not fastP:
-            if fastP is None or fastP.next is None or slowP is None:
+        while slowP is not fastP: #If there is a cycle, pointers will meet
+            if fastP is None or fastP.next is None: #Check for end of list
                 return False
             slowP = slowP.next
             fastP = fastP.next.next

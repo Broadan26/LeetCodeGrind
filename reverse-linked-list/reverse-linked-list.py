@@ -17,3 +17,13 @@ class Solution:
             new_list = new_node
             head = head.next
         return new_list
+    
+    def reverseListOptimal(head: ListNode) -> ListNode:
+    '''
+    Reverses a singly linked list
+    Returns the reversed list
+    '''
+    new_list = None
+    while head:
+        new_list, new_list.next, head = head, new_list, head.next
+    return new_list

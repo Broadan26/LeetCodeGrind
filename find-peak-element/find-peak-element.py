@@ -13,3 +13,8 @@ class Solution:
             else: #Peak to the right
                 left = mid + 1
         return left
+    
+    def findPeakElementSlow(nums: list[int]) -> int: #Time Complexity O(n), Space Complexity O(1)
+        for i in range(len(nums)):
+            if nums[i] > nums[i + 1]: #Can actually handle plateaus
+                return i

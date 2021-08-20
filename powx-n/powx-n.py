@@ -1,7 +1,7 @@
 class Solution:
     def myPow(self, x: float, n: int) -> float:
         '''
-        Solving the problem as intended using recursion
+        Solving the problem as intended using iteration
         Slower than average for this reason
         '''
         solution = 1.0

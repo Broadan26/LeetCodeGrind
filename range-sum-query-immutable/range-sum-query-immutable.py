@@ -1,13 +1,20 @@
 class NumArray:
 
     def __init__(self, nums: list[int]):
-        self.nums = nums
+        self.the_sums = []
+        self.calculateSums(nums)
+
+    def calculateSums(self, nums: list[int]):
+        for i, num in enumerate(nums):
+            if i == 0:
+                self.the_sums.append(num)
+            else:
+                self.the_sums.append(self.the_sums[i-1] + num)
 
     def sumRange(self, left: int, right: int) -> int:
-        the_sum = 0
-        for i in range(left, right+1, 1):
-            the_sum += self.nums[i]
-        return the_sum
+        if left == 0:
+            return self.the_sums[right]
+        return self.the_sums[right] - self.the_sums[left-1]
 
 # Your NumArray object will be instantiated and called as such:
 # obj = NumArray(nums)

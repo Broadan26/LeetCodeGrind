@@ -10,10 +10,9 @@ class Solution:
         Determines if a route-to-leaf path contains the target sum
         Returns True if a route exists, false otherwise
         '''
-        if root is None: #Root contains nothing
+        if not root: #Root contains nothing
             return False
-        if root.left is None and root.right is None: #Check if targetSum reached
-            if targetSum == root.val:
-                return True
+        if targetSum == root.val and not root.left and not root.right: #Check if targetSum reached
+            return True
         current = targetSum - root.val #Update target val
         return (self.hasPathSum(root.left, current) or self.hasPathSum(root.right, current)) #Recurse for result

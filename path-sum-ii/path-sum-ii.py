@@ -11,17 +11,20 @@ class Solution:
         Returns a list of paths root->leaf as a list of lists
         '''
         answer = []
-        if root is None: # Nothing to be done
+        if not root:
             return answer
-
-        def dfs(node: TreeNode, path: list[int], currentSum: int):
-            if not node:
-                return 0
-            if node.left == None and node.right == None and currentSum == node.val:
-                path.append(node.val)
-                answer.append(path)
-            dfs(node.left, path + [node.val], currentSum - node.val)
-            dfs(node.right, path + [node.val], currentSum - node.val)
-
-        dfs(root, [], targetSum)
+		
+        self.find_current_paths(root, targetSum, [], answer)
         return answer
+
+    def find_current_paths(self, root: TreeNode, s: int, temp: list[int], answer: list[list[int]]):
+        if not root:
+            return
+        
+        temp.append(root.val)
+        if root.val == s and not root.left and not root.right:
+            answer.append(list(temp))
+        else:
+            self.find_current_paths(root.left, s-root.val, temp, answer)
+            self.find_current_paths(root.right, s-root.val, temp, answer)
+        del temp[-1]

@@ -1,3 +1,4 @@
+[Discussion Post (created on 17/9/2021 at 19:37)](https://leetcode.com/problems/cousins-in-binary-tree/discuss/1527249/Python-or-Basic-BFS-Solution)  
 <h2>993. Cousins in Binary Tree</h2><h3>Easy</h3><hr><div><p>Given the <code>root</code> of a binary tree with unique values and the values of two different nodes of the tree <code>x</code> and <code>y</code>, return <code>true</code> <em>if the nodes corresponding to the values </em><code>x</code><em> and </em><code>y</code><em> in the tree are <strong>cousins</strong>, or </em><code>false</code><em> otherwise.</em></p>
 
 <p>Two nodes of a binary tree are <strong>cousins</strong> if they have the same depth with different parents.</p>

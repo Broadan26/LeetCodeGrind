@@ -5,14 +5,13 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
-        inorder = []
-        if root:
-            inorder = self.createList(root, inorder)
-        return inorder
-    def createList(self, root: TreeNode, inorder: list) -> list:
-        if root:
-            inorder = self.createList(root.left, inorder)
-            inorder.append(root.val)
-            inorder = self.createList(root.right, inorder)
-        return inorder
+    def inorderTraversal(self, root: TreeNode) -> list[int]:
+        return self.dfs(root, [])
+    
+    def dfs(self, root: TreeNode, node_list: list[int]) -> list[int]:
+        if not root:
+            return []
+        self.dfs(root.left, node_list)
+        node_list.append(root.val)
+        self.dfs(root.right, node_list)
+        return node_list

@@ -32,11 +32,9 @@ class Solution
         // Find the smallest possible subarray
         int maxRange = Integer.MAX_VALUE;
         for (ArrayList<Integer> value : map.values())
-        {
-            System.out.println(value.get(0) + " " + value.get(1) + " " + value.get(2));
             if (maxCount == value.get(0) && value.get(2) - value.get(1) < maxRange-1)
                 maxRange = 1 + value.get(2) - value.get(1);
-        }
+
         return maxRange;
     }
 }

@@ -11,9 +11,9 @@ class Solution
         
 //         // Find longest consecutive list of integers
 //         int longest = 0;
-//         for (int num : check)
+//         for (int num : nums)
 //         {
-//             int upper = nums[i]+1, lower = nums[i]-1;
+//             int upper = num+1, lower = num-1;
 //             while (check.contains(upper)) // Check above mid
 //                 upper += 1;
 //             while (check.contains(lower)) // Check below mid
